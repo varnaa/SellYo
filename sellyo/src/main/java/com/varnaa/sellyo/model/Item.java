@@ -1,9 +1,6 @@
 package com.varnaa.sellyo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
@@ -37,6 +34,8 @@ public class Item {
     private String condition;
     private boolean status;
     private String onlineLink;
+    @Lob
+    private String image;
     @NotNull
     private String userId;
 
@@ -131,6 +130,14 @@ public class Item {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setUserId(String userId) {
